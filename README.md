@@ -26,14 +26,13 @@ TravelContentCrew is a collaborative project aimed at creating comprehensive and
   - ipykernel
   - langchain_community
   - pypdf
-  - langchain_text-splitters
   - langchain-openai
 
 ### Installation
 
 1. Clone the repository:
    ```bash
-   git clone <repository-url>
+   git clone https://github.com/VivekReddy-2001/TravelContentCrew_Using_CrewAI
    cd TravelContentCrew
    ```
 
