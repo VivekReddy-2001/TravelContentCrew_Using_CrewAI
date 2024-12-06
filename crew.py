@@ -7,6 +7,9 @@ from tools import tool
 from langchain_openai import ChatOpenAI
 from litellm import completion
 from crewai import LLM
+from dotenv import load_dotenv
+load_dotenv(override=True)
+import os
 
 
 class TravelContentCrew():
@@ -18,7 +21,8 @@ class TravelContentCrew():
         """Initialize the crew with a specific topic"""
         #super().__init__()  # Add this line to properly initialize CrewBase
         self.topic = topic
-        self.llm=LLM(model="ollama/crewai-gemma2")
+        #self.llm=LLM(model="ollama/crewai-gemma2")
+        self.llm=ChatOpenAI(model="gpt-4o-mini",api_key=os.getenv("OPENAI_API_KEY"))
         
     #research agent
     def research_agent(self)-> Agent:
