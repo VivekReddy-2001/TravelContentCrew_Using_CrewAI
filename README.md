@@ -90,9 +90,15 @@ python tripcrewai.py
 
 ### **📊 Output**
 - Generates an optimized travel itinerary with distance calculations and routes.
-- Sample Output: [Download the PDF](file:///C:/Users/vivek/Downloads/tripplannerapp_pic.pdf).
+- Sample Output:
+
+![Alt Text](https://github.com/VivekReddy-2001/TravelContentCrew_Using_CrewAI/blob/main/trip_planner_1.png)
+![Alt Text](https://github.com/VivekReddy-2001/TravelContentCrew_Using_CrewAI/blob/main/trip_planner-2.png)
+![Alt Text](https://github.com/VivekReddy-2001/TravelContentCrew_Using_CrewAI/blob/main/trip_planner_3.png)
+![Alt Text](https://github.com/VivekReddy-2001/TravelContentCrew_Using_CrewAI/blob/main/trip_planner_4.png)
 
 ---
+
 
 ## 📢 Contact
 
