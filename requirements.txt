@@ -11,3 +11,4 @@ langchain-openai
 langchain-ollama
 langchain-groq
 litellm
+agentops

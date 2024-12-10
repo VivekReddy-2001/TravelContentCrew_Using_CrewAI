@@ -1,22 +1,22 @@
-# TravelContentCrew
+# Make My Trip -- AI Travel Planning Assistant
 
 ## Overview
 
-TravelContentCrew is a collaborative project aimed at creating comprehensive and engaging travel content for various destinations. The project leverages multiple specialized agents to research, explore, and document information about travel, food, culture, and practical planning tips.
+Make My Trip is a travel planning assistant designed to help users create comprehensive and efficient travel itineraries. It leverages multiple AI agents to research destinations, find flight deals, explore local cuisine, and generate optimized travel plans that include distances and route suggestions. This project is built using the CrewAI framework and integrates LLM (Large Language Models) for intelligent task delegation and execution.
 
 ## Features
 
-- **Research Agent**: Gathers detailed information about travel destinations, including landmarks, history, and geographical features.
-- **Food Enthusiast Agent**: Explores local cuisine, popular dining spots, and food customs.
-- **Culture Specialist Agent**: Provides insights into local traditions, customs, and social norms.
-- **Travel Planner Agent**: Offers practical advice on travel logistics, including best times to visit, accommodations, and itineraries.
-- **Content Editor Agent**: Compiles and refines all gathered information into a polished travel guide.
+-**Destination Research**: Gathers information about landmarks, transportation options, history, and geography.
+-**Flight Finder**: Searches for the cheapest and most convenient flights.
+-**Cuisine Explorer**: Provides insights into local food culture, popular dishes, and dining recommendations.
+-**Optimized Travel Planner**: Generates a travel plan with calculated distances between locations and an optimized sequence of visits.
+
 
 ## Getting Started
 
 ### Prerequisites
 
-- Python 3.x
+- Python 3.10.0
 - Required libraries from `requirements.txt`:
   - streamlit
   - crewai
@@ -27,13 +27,23 @@ TravelContentCrew is a collaborative project aimed at creating comprehensive and
   - langchain_community
   - pypdf
   - langchain-openai
+  - agentops
+
+### Project Structure
+
+**tripplannerapp.py**: web app for project. Entry point for the project where tasks are initialized and executed.
+
+tools.py: Contains additional tools for enhancing agent capabilities.
+
+**tripcrewai.py**: Defines agents, tasks, and crew processes.
+
+requirements.txt: Lists the required Python packages.
 
 ### Installation
 
 1. Clone the repository:
    ```bash
    git clone https://github.com/VivekReddy-2001/TravelContentCrew_Using_CrewAI
-   cd TravelContentCrew
    ```
 
 2. Install the required packages:
@@ -45,17 +55,28 @@ TravelContentCrew is a collaborative project aimed at creating comprehensive and
 
 To run the project, execute the following command:
 ```bash
-python main.py
+python tripcrewai.py
 ```
-This initializes the `TravelContentCrew` with a specified topic (e.g., Paris).
+
 
 ### Agents Overview
 
 - **Research Agent**: Collects extensive information about the specified location.
 - **Food Agent**: Analyzes local cuisine and dining options.
-- **Culture Agent**: Investigates cultural aspects and local customs.
-- **Travel Agent**: Provides travel planning and logistics support.
-- **Editor Agent**: Edits and organizes the final content into a cohesive guide.
+- **Flight Agent**: Searches for different flights available to destination location and recommends best flight to take.
+- **Travel Agent**: Create an efficient travel plan for destination.
+
+### streamlit app
+
+- **Input**: 
+**Starting point**: Starting point of your trip
+**Destination**: Place that you want to travel
+**Travel dates**: Enter Dates that you want to travel
+**No_of_days**: Enter No of days of your trip.
+
+-- **Output**:
+Here's the output of streamlit app: [Download the PDF](file:///C:/Users/vivek/Downloads/tripplannerapp_pic.pdf).
+
 
 ## Contact
 
