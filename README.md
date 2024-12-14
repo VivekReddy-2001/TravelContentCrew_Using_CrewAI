@@ -102,6 +102,9 @@ python tripcrewai.py
 
 ## 📢 Contact
 
-For questions or feedback, feel free to reach out to **Vivek** at [vivekreddy3812@gmail.com](mailto:vivekreddy3812@gmail.com).
+For questions or feedback, feel free to reach out to :
+
+**Vivek** at [vivekreddy3812@gmail.com](mailto:vivekreddy3812@gmail.com).
+**Rahul** at [jangili.r@northeastern.edu](mailto:jangili.r@northeastern.edu).
 
 ---
