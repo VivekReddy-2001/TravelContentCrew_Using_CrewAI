@@ -2,5 +2,5 @@ __pycache__
 myenv
 src/__pycache__
 sample.ipynb
-.env
+TravelContentCrew_Using_CrewAI/.env
 
