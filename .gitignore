@@ -1,4 +1,5 @@
-.env
-myenv
 __pycache__
+myenv
+src/__pycache__
+sample.ipynb
 
