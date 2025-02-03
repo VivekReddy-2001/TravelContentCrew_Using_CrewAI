@@ -11,7 +11,12 @@ from dotenv import load_dotenv
 load_dotenv(override=True)
 import os
 import agentops
-agentops.init(os.getenv("AGENT_OPS_API_KEY"))
+from IPython.display import display
+from PIL import Image
+# agentops.init(os.getenv("AGENT_OPS_API_KEY"))
+# from recommendations import recommendations
+import glob
+import matplotlib.pyplot as plt
 
 class TravelContentCrew():
     """
@@ -172,6 +177,54 @@ class TravelContentCrew():
             verbose=True
         )
         return crew.kickoff()
+    
+    import os
+
+
+
+    def show_images_grid(self, city_folder):
+        city_names = [city for city in os.listdir(city_folder) if os.path.isdir(os.path.join(city_folder, city))]
+        
+        for city in city_names:
+            city_path = os.path.join(city_folder, city)
+            image_files = [img for img in os.listdir(city_path) if img.endswith(".jpg")]
+            
+            if image_files:
+                print(f"Displaying images for {city}:")
+
+                # Prepare grid
+                n = len(image_files)
+                cols = 3  # Set the number of columns in the grid
+                rows = (n // cols) + (n % cols > 0)  # Calculate the number of rows
+                
+                # Create subplots
+                fig, axes = plt.subplots(rows, cols, figsize=(15, 5 * rows))
+                axes = axes.flatten()  # Flatten to make indexing easier
+
+                for i, img_file in enumerate(image_files):
+                    img_path = os.path.join(city_path, img_file)
+                    try:
+                        img = Image.open(img_path)
+                        axes[i].imshow(img)
+                        axes[i].axis('off')  # Hide axes
+                        axes[i].set_title(img_file)
+                    except Exception as e:
+                        print(f"Error displaying image {img_file}: {e}")
+
+                # Hide any extra axes if the number of images is less than grid size
+                for i in range(n, len(axes)):
+                    axes[i].axis('off')
+
+                plt.tight_layout()
+                plt.show()
+            else:
+                print(f"No images found for {city}.")
+
+# Example usage
+
+
+
+        
 
 if __name__ == "__main__":
     from_location=input(dedent("""What is the Starting Point  of your trip? """))
@@ -180,5 +233,9 @@ if __name__ == "__main__":
     no_of_days=input(dedent("""Number of days to travel in your trip"""))
     
     travel_crew = TravelContentCrew(from_location=from_location, to_location=to_location,travel_date=travel_date, no_of_days=no_of_days)
-    result = travel_crew.run_crew()
-    print(result)
+    
+    travel_crew.show_images_grid('D:/make_my_trip/TravelContentCrew_Using_CrewAI/src/City_Photos')
+  
+    # print(result)
+    
+
